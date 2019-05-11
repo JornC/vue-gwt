@@ -176,7 +176,7 @@ public class ComponentExposedTypeGenerator {
     return TypeSpec
         .classBuilder(exposedTypeClassName)
         .addModifiers(Modifier.PUBLIC)
-        .superclass(TypeName.get(component.asType()))
+        .superclass(ClassName.bestGuess(component.getQualifiedName().toString()))
         .addAnnotation(AnnotationSpec
             .builder(Generated.class)
             .addMember("value", "$S", ComponentExposedTypeGenerator.class.getCanonicalName())
@@ -696,7 +696,7 @@ public class ComponentExposedTypeGenerator {
         dependenciesName,
         dependenciesName,
         "$options()",
-        component);
+        ClassName.bestGuess(component.getQualifiedName().toString()));
   }
 
   private void copyDependenciesFields(ComponentInjectedDependenciesBuilder dependenciesBuilder,

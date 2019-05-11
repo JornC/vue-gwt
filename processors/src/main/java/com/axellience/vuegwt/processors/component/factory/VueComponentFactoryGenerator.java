@@ -75,7 +75,7 @@ public class VueComponentFactoryGenerator extends AbstractVueComponentFactoryGen
     // Get options
     initBuilder.addStatement("$T<$T> componentOptions = new $T().getOptions()",
         VueComponentOptions.class,
-        component.asType(),
+        ClassName.bestGuess(component.getQualifiedName().toString()),
         componentExposedTypeName(component));
     processCustomizeOptions(component, initBuilder, initParametersCall);
 
@@ -132,7 +132,7 @@ public class VueComponentFactoryGenerator extends AbstractVueComponentFactoryGen
 
     initBuilder.addStatement(
         "jsConstructor.getOptions().addProvider($T.class, componentDependenciesProvider)",
-        component);
+        ClassName.bestGuess(component.getQualifiedName().toString()));
   }
 
   /**
