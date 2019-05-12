@@ -742,7 +742,7 @@ public class ComponentExposedTypeGenerator {
     createdMethodBuilder.addStatement(
         "$T.initComponentInstanceFields(this, new $T())",
         VueGWTTools.class,
-        component);
+        ClassName.bestGuess(component.getQualifiedName().toString()));
   }
 
   /**
