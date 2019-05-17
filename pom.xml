@@ -36,13 +36,6 @@
     </developer>
   </developers>
 
-  <modules>
-    <module>core</module>
-    <module>gwt2</module>
-    <module>processors</module>
-    <module>tests</module>
-  </modules>
-
   <scm>
     <connection>scm:git:git://github.com/VueGWT/vue-gwt.git</connection>
     <developerConnection>scm:git:ssh://github.com:VueGWT/vue-gwt.git</developerConnection>
@@ -264,6 +257,29 @@
   </build>
 
   <profiles>
+    <profile>
+      <id>all</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <modules>
+        <module>core</module>
+        <module>gwt2</module>
+        <module>processors</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>test</id>
+      <modules>
+        <module>core</module>
+        <module>gwt2</module>
+        <module>processors</module>
+        <module>tests</module>
+      </modules>
+    </profile>
+
     <profile>
       <id>release</id>
       <build>
