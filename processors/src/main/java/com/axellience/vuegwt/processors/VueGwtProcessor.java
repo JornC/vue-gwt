@@ -27,7 +27,7 @@ import javax.lang.model.util.ElementFilter;
     "com.axellience.vuegwt.core.annotations.component.JsComponent",
     "com.axellience.vuegwt.core.annotations.directive.Directive"
 })
-@SupportedSourceVersion(SourceVersion.RELEASE_11)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class VueGwtProcessor extends AbstractProcessor {
 
   @Override
